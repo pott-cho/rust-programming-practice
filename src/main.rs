@@ -1,3 +1,4 @@
+mod q1480;
 mod q1920;
 mod q1929;
 
@@ -7,4 +8,7 @@ fn main() {
 
     let result = q1920::build_array(&[0, 2, 1, 5, 3, 4]);
     assert_eq!(result, [0, 1, 2, 4, 5, 3]);
+
+    let result = q1480::running_sum(Vec::from([1, 2, 3, 4]));
+    assert_eq!(result, Vec::from([1, 3, 6, 10]));
 }
