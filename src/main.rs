@@ -12,9 +12,13 @@ mod q1920;
 mod q1929;
 mod q2114;
 mod q2160;
+mod q2235;
 mod q771;
 
 fn main() {
+    let result = q2235::sum(12, 5);
+    assert_eq!(result, 17);
+
     let result = q1929::get_concatenation(&[1, 2, 1]);
     assert_eq!(result, vec![1, 2, 1, 1, 2, 1]);
 
