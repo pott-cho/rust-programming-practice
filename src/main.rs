@@ -1,4 +1,5 @@
 mod q1480;
+mod q1672;
 mod q1920;
 mod q1929;
 
@@ -11,4 +12,7 @@ fn main() {
 
     let result = q1480::running_sum(&[1, 2, 3, 4]);
     assert_eq!(result, Vec::from([1, 3, 6, 10]));
+
+    let result = q1672::maximum_wealth(vec![vec![1, 2, 3], vec![3, 2, 1]]);
+    assert_eq!(result, 6);
 }
