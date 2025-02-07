@@ -1,3 +1,4 @@
+mod q1281;
 mod q1431;
 mod q1470;
 mod q1480;
@@ -37,4 +38,7 @@ fn main() {
 
     let result = q1431::kids_with_candies(&[2, 3, 5, 1, 3], 3);
     assert_eq!(result, vec![true, true, true, false, true]);
+
+    let result = q1281::subtract_product_and_sum(234);
+    assert_eq!(result, 15);
 }
