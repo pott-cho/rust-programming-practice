@@ -1,3 +1,4 @@
+mod q1108;
 mod q1281;
 mod q1365;
 mod q1431;
@@ -47,4 +48,7 @@ fn main() {
     assert_eq!(result, vec![4, 0, 1, 1, 3]);
     let result = q1365::smaller_numbers_than_current(&[7, 7, 7, 7]);
     assert_eq!(result, vec![0, 0, 0, 0]);
+
+    let result = q1108::defang_i_paddr("1.1.1.1");
+    assert_eq!(result, String::from("1[.]1[.]1[.]1"));
 }
