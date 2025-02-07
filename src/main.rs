@@ -1,4 +1,5 @@
 mod q1281;
+mod q1365;
 mod q1431;
 mod q1470;
 mod q1480;
@@ -41,4 +42,9 @@ fn main() {
 
     let result = q1281::subtract_product_and_sum(234);
     assert_eq!(result, 15);
+
+    let result = q1365::smaller_numbers_than_current(vec![8, 1, 2, 2, 3]);
+    assert_eq!(result, vec![4, 0, 1, 1, 3]);
+    let result = q1365::smaller_numbers_than_current(vec![7, 7, 7, 7]);
+    assert_eq!(result, vec![0, 0, 0, 0]);
 }
