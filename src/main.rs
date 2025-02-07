@@ -3,6 +3,7 @@ mod q1480;
 mod q1672;
 mod q1920;
 mod q1929;
+mod q2160;
 
 fn main() {
     let result = q1929::get_concatenation(&[1, 2, 1]);
@@ -19,4 +20,9 @@ fn main() {
 
     let result = q1470::shuffle(&[2, 5, 1, 3, 4, 7], 3);
     assert_eq!(result, vec![2, 3, 5, 4, 1, 7]);
+
+    let result = q2160::minimum_sum(2932);
+    assert_eq!(result, 52);
+    let result = q2160::minimum_sum(4009);
+    assert_eq!(result, 13);
 }
