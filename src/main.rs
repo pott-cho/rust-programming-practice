@@ -35,6 +35,6 @@ fn main() {
     let result = q1512::num_identical_pairs(&[1, 2, 3]);
     assert_eq!(result, 0);
 
-    let result = q1431::kids_with_candies(vec![2, 3, 5, 1, 3], 3);
+    let result = q1431::kids_with_candies(&[2, 3, 5, 1, 3], 3);
     assert_eq!(result, vec![true, true, true, false, true]);
 }
