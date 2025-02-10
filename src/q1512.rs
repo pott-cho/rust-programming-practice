@@ -1,4 +1,4 @@
-pub fn num_identical_pairs(nums: Vec<i32>) -> i32 {
+pub fn num_identical_pairs(nums: &[i32]) -> i32 {
     let size = nums.len();
     let mut result = 0;
 

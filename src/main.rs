@@ -27,10 +27,10 @@ fn main() {
     let result = q2160::minimum_sum(4009);
     assert_eq!(result, 13);
 
-    let result = q1512::num_identical_pairs(vec![1, 2, 3, 1, 1, 3]);
+    let result = q1512::num_identical_pairs(&[1, 2, 3, 1, 1, 3]);
     assert_eq!(result, 4);
-    let result = q1512::num_identical_pairs(vec![1, 1, 1, 1]);
+    let result = q1512::num_identical_pairs(&[1, 1, 1, 1]);
     assert_eq!(result, 6);
-    let result = q1512::num_identical_pairs(vec![1, 2, 3]);
+    let result = q1512::num_identical_pairs(&[1, 2, 3]);
     assert_eq!(result, 0);
 }
