@@ -6,6 +6,7 @@ mod q1470;
 mod q1480;
 mod q1512;
 mod q1672;
+mod q1720;
 mod q1773;
 mod q1859;
 mod q1920;
@@ -83,4 +84,7 @@ fn main() {
         "silver",
     );
     assert_eq!(result, 1);
+
+    let result = q1720::decode(&[1, 2, 3], 1);
+    assert_eq!(result, vec![1, 0, 2, 1]);
 }
