@@ -1,3 +1,4 @@
+mod q1470;
 mod q1480;
 mod q1672;
 mod q1920;
@@ -15,4 +16,7 @@ fn main() {
 
     let result = q1672::maximum_wealth(vec![vec![1, 2, 3], vec![3, 2, 1]]);
     assert_eq!(result, 6);
+
+    let result = q1470::shuffle(&[2, 5, 1, 3, 4, 7], 3);
+    assert_eq!(result, vec![2, 3, 5, 4, 1, 7]);
 }
