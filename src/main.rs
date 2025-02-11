@@ -1,5 +1,6 @@
 mod q1470;
 mod q1480;
+mod q1512;
 mod q1672;
 mod q1920;
 mod q1929;
@@ -25,4 +26,11 @@ fn main() {
     assert_eq!(result, 52);
     let result = q2160::minimum_sum(4009);
     assert_eq!(result, 13);
+
+    let result = q1512::num_identical_pairs(&[1, 2, 3, 1, 1, 3]);
+    assert_eq!(result, 4);
+    let result = q1512::num_identical_pairs(&[1, 1, 1, 1]);
+    assert_eq!(result, 6);
+    let result = q1512::num_identical_pairs(&[1, 2, 3]);
+    assert_eq!(result, 0);
 }
