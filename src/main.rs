@@ -1,5 +1,6 @@
 mod q1108;
 mod q1281;
+mod q1313;
 mod q1365;
 mod q1431;
 mod q1470;
@@ -87,4 +88,7 @@ fn main() {
 
     let result = q1720::decode(&[1, 2, 3], 1);
     assert_eq!(result, vec![1, 0, 2, 1]);
+
+    let result = q1313::decompress_rl_elist(&[1, 2, 3, 4]);
+    assert_eq!(result, [2, 4, 4, 4]);
 }
