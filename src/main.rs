@@ -4,6 +4,7 @@ mod q1290;
 mod q1313;
 mod q1342;
 mod q1365;
+mod q1389;
 mod q1431;
 mod q1470;
 mod q1480;
@@ -115,4 +116,7 @@ fn main() {
 
     let result = q1342::number_of_steps(14);
     assert_eq!(result, 6);
+
+    let result = q1389::create_target_array(&[0, 1, 2, 3, 4], &[0, 1, 2, 2, 1]);
+    assert_eq!(result, vec![0, 4, 1, 3, 2]);
 }
