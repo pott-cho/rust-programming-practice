@@ -18,6 +18,7 @@ mod q1859;
 mod q1920;
 mod q1929;
 mod q2011;
+mod q2037;
 mod q2114;
 mod q2160;
 mod q2235;
@@ -123,4 +124,7 @@ fn main() {
 
     let result = q1688::number_of_matches(7);
     assert_eq!(result, 6);
+
+    let result = q2037::min_moves_to_seat(&[3, 1, 5], &[2, 7, 4]);
+    assert_eq!(result, 4);
 }
