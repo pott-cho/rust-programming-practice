@@ -9,6 +9,7 @@ mod q1672;
 mod q1920;
 mod q1929;
 mod q2160;
+mod q771;
 
 fn main() {
     let result = q1929::get_concatenation(&[1, 2, 1]);
@@ -51,4 +52,7 @@ fn main() {
 
     let result = q1108::defang_i_paddr("1.1.1.1");
     assert_eq!(result, String::from("1[.]1[.]1[.]1"));
+
+    let result = q771::num_jewels_in_stones("aA", "aAAbbbb");
+    assert_eq!(result, 3);
 }
