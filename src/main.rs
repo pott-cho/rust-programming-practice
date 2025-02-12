@@ -8,6 +8,7 @@ mod q1512;
 mod q1672;
 mod q1920;
 mod q1929;
+mod q2114;
 mod q2160;
 mod q771;
 
@@ -55,4 +56,11 @@ fn main() {
 
     let result = q771::num_jewels_in_stones("aA", "aAAbbbb");
     assert_eq!(result, 3);
+
+    let result = q2114::most_words_found(vec![
+        "alice and bob love leetcode",
+        "i think so too",
+        "this is great thanks very much",
+    ]);
+    assert_eq!(result, 6);
 }
