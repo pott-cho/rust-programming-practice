@@ -6,6 +6,7 @@ mod q1470;
 mod q1480;
 mod q1512;
 mod q1672;
+mod q1859;
 mod q1920;
 mod q1929;
 mod q2114;
@@ -63,4 +64,7 @@ fn main() {
         "this is great thanks very much",
     ]);
     assert_eq!(result, 6);
+
+    let result = q1859::sort_sentence("is2 sentence4 This1 a3");
+    assert_eq!(result, String::from("This is a sentence"));
 }
