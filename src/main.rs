@@ -6,6 +6,7 @@ mod q1470;
 mod q1480;
 mod q1512;
 mod q1672;
+mod q1773;
 mod q1859;
 mod q1920;
 mod q1929;
@@ -67,4 +68,15 @@ fn main() {
 
     let result = q1859::sort_sentence("is2 sentence4 This1 a3");
     assert_eq!(result, String::from("This is a sentence"));
+
+    let result = q1773::count_matches(
+        &[
+            vec!["phone", "blue", "pixel"],
+            vec!["computer", "silver", "lenovo"],
+            vec!["phone", "gold", "iphone"],
+        ],
+        "color",
+        "silver",
+    );
+    assert_eq!(result, 1);
 }
