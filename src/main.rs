@@ -16,6 +16,7 @@ mod q1929;
 mod q2114;
 mod q2160;
 mod q2235;
+mod q2325;
 mod q771;
 
 fn main() {
@@ -95,4 +96,10 @@ fn main() {
 
     let result = q1528::restore_string("codeleet", &[4, 5, 6, 7, 0, 2, 1, 3]);
     assert_eq!(result, "leetcode");
+
+    let result = q2325::decode_message(
+        "the quick brown fox jumps over the lazy dog",
+        "vkbs bs t suepuv",
+    );
+    assert_eq!(result, "this is a secret");
 }
