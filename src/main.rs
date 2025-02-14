@@ -1,5 +1,6 @@
 mod q1108;
 mod q1281;
+mod q1290;
 mod q1313;
 mod q1365;
 mod q1431;
@@ -102,4 +103,8 @@ fn main() {
         "vkbs bs t suepuv",
     );
     assert_eq!(result, "this is a secret");
+
+    let linked_list = q1290::Node::make_singly_linked_list(&[1, 0, 1]);
+    let result = q1290::get_decimal_value(linked_list);
+    assert_eq!(result, 5);
 }
