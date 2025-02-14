@@ -6,6 +6,7 @@ mod q1431;
 mod q1470;
 mod q1480;
 mod q1512;
+mod q1528;
 mod q1672;
 mod q1720;
 mod q1773;
@@ -91,4 +92,7 @@ fn main() {
 
     let result = q1313::decompress_rl_elist(&[1, 2, 3, 4]);
     assert_eq!(result, [2, 4, 4, 4]);
+
+    let result = q1528::restore_string("codeleet", &[4, 5, 6, 7, 0, 2, 1, 3]);
+    assert_eq!(result, "leetcode");
 }
