@@ -35,7 +35,7 @@ fn main() {
     let result = q1480::running_sum(&[1, 2, 3, 4]);
     assert_eq!(result, Vec::from([1, 3, 6, 10]));
 
-    let result = q1672::maximum_wealth(vec![vec![1, 2, 3], vec![3, 2, 1]]);
+    let result = q1672::maximum_wealth(&[vec![1, 2, 3], vec![3, 2, 1]]);
     assert_eq!(result, 6);
 
     let result = q1470::shuffle(&[2, 5, 1, 3, 4, 7], 3);
