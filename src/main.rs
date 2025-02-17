@@ -2,6 +2,7 @@ mod q1108;
 mod q1281;
 mod q1290;
 mod q1313;
+mod q1342;
 mod q1365;
 mod q1431;
 mod q1470;
@@ -111,4 +112,7 @@ fn main() {
 
     let result = q2011::final_value_after_operations(vec!["--X", "X++", "X++"]);
     assert_eq!(result, 1);
+
+    let result = q1342::number_of_steps(14);
+    assert_eq!(result, 6);
 }
