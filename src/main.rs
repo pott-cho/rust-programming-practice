@@ -11,6 +11,7 @@ mod q1480;
 mod q1512;
 mod q1528;
 mod q1672;
+mod q1688;
 mod q1720;
 mod q1773;
 mod q1859;
@@ -119,4 +120,7 @@ fn main() {
 
     let result = q1389::create_target_array(&[0, 1, 2, 3, 4], &[0, 1, 2, 2, 1]);
     assert_eq!(result, vec![0, 4, 1, 3, 2]);
+
+    let result = q1688::number_of_matches(7);
+    assert_eq!(result, 6);
 }
