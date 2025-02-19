@@ -1,12 +1,14 @@
 pub fn decode(encoded: &[i32], first: i32) -> Vec<i32> {
-    let mut result = Vec::new();
-    result.push(first);
+    let decoded: Vec<i32> = encoded
+        .iter()
+        .scan(first, |state, &e| {
+            *state ^= e;
+            Some(*state)
+        })
+        .collect();
 
-    let mut temp = first;
-    for e in encoded {
-        temp ^= e;
-        result.push(temp);
-    }
+    let mut result = vec![first];
+    result.extend(decoded);
 
     result
 }
