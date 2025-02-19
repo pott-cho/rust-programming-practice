@@ -1,11 +1,8 @@
-pub fn minimum_sum(num: i32) -> i32 {
-    let mut num = num;
-    let mut digits: Vec<i32> = (0..4)
-        .map(|_| {
-            let digit = num % 10;
-            num /= 10;
-            digit
-        })
+pub fn minimum_sum(num: i32) -> u32 {
+    let mut digits: Vec<u32> = num
+        .to_string()
+        .chars()
+        .filter_map(|c| c.to_digit(10))
         .collect();
 
     digits.sort_unstable();
