@@ -92,7 +92,17 @@ fn main() {
         "color",
         "silver",
     );
-    assert_eq!(result, 1);
+    assert_eq!(result, Ok(1));
+    let result = q1773::count_matches(
+        &[
+            vec!["phone", "blue", "pixel"],
+            vec!["computer", "silver", "lenovo"],
+            vec!["phone", "gold", "iphone"],
+        ],
+        "colour",
+        "silver",
+    );
+    assert_eq!(result, Err(String::from("Please check rule_key.")));
 
     let result = q1720::decode(&[1, 2, 3], 1);
     assert_eq!(result, vec![1, 0, 2, 1]);
