@@ -99,6 +99,8 @@ fn main() {
 
     let result = q1313::decompress_rl_elist(&[1, 2, 3, 4]);
     assert_eq!(result, [2, 4, 4, 4]);
+    let result = q1313::decompress_rl_elist(&[1, 1, 2, 3]);
+    assert_eq!(result, [1, 3, 3]);
 
     let result = q1528::restore_string("codeleet", &[4, 5, 6, 7, 0, 2, 1, 3]);
     assert_eq!(result, "leetcode");
