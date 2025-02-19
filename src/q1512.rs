@@ -8,10 +8,10 @@ pub fn num_identical_pairs(nums: &[i32]) -> i32 {
     for n in nums {
         map.entry(*n)
             .and_modify(|e| {
-                result += *e;
                 *e += 1;
+                result += *e;
             })
-            .or_insert(1);
+            .or_insert(0);
     }
     result
 }
