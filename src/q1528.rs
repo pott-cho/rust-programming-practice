@@ -1,11 +1,6 @@
 pub fn restore_string(s: &str, indices: &[usize]) -> String {
     let ch: Vec<char> = s.chars().collect();
-    let n = indices.len();
-    let mut result = [' '; 101];
-    for i in 0..n {
-        let index = indices[i];
-        result[index] = ch[i];
-    }
-
-    result[0..n].iter().collect()
+    let mut combi: Vec<(char, &usize)> = ch.into_iter().zip(indices).collect();
+    combi.sort_by_key(|&(_, index)| index);
+    combi.iter().map(|(x, _)| x).collect()
 }
