@@ -1,15 +1,4 @@
 pub fn number_of_matches(n: i32) -> i32 {
-    let mut matches = 0;
-    let mut teams = n;
-    while teams > 1 {
-        if teams % 2 == 0 {
-            teams /= 2;
-            matches += teams;
-        } else {
-            teams /= 2;
-            matches += teams;
-            teams += 1;
-        }
-    }
-    matches
+    // 리그에서 총 경기 수는 항상 n-1 이다.
+    n - 1
 }
