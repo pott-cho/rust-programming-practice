@@ -1,13 +1,9 @@
-pub fn final_value_after_operations(operations: Vec<&str>) -> i32 {
-    let mut result = 0;
-
-    for operation in operations {
-        if operation.starts_with('-') || operation.ends_with('-') {
-            result -= 1;
+pub fn final_value_after_operations(operations: &[&str]) -> i32 {
+    operations.iter().fold(0, |acc, x| {
+        if x.starts_with('-') || x.ends_with('-') {
+            acc - 1
         } else {
-            result += 1;
+            acc + 1
         }
-    }
-
-    result
+    })
 }
