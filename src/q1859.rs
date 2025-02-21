@@ -1,4 +1,8 @@
 pub fn sort_sentence(s: &str) -> String {
+    if s.len() < 2 {
+        return s.to_string();
+    }
+
     // 1. 문장을 단어로 분리한다.
     let words: Vec<&str> = s.split_whitespace().collect();
     let mut arr: Vec<(&str, &str)> = words

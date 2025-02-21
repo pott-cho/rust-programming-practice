@@ -82,6 +82,10 @@ fn main() {
 
     let result = q1859::sort_sentence("is2 sentence4 This1 a3");
     assert_eq!(result, String::from("This is a sentence"));
+    let result = q1859::sort_sentence("i");
+    assert_eq!(result, String::from("i"));
+    let result = q1859::sort_sentence("");
+    assert_eq!(result, String::new());
 
     let result = q1773::count_matches(
         &[
