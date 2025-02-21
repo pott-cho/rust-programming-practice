@@ -9,7 +9,7 @@ pub fn subtract_product_and_sum(n: i32) -> u32 {
     // 2. 모든 자리수의 곱셈합(product) 와 덧셈합(sum) 을 구한다.
     let (product, sum) = arr
         .iter()
-        .fold((1, 0), |(p, s), &digit| (p * digit, s + digit));
+        .fold((1, 0), |(p, s), digit| (p * digit, s + digit));
 
     product - sum
 }
