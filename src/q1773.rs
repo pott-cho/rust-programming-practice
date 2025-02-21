@@ -10,7 +10,7 @@ pub fn count_matches(items: &[Vec<&str>], rule_key: &str, rule_value: &str) -> R
 
     let result = items
         .iter()
-        .filter(|x| x[target_index] == rule_value)
+        .filter(|x| x.get(target_index) == Some(&rule_value))
         .count();
 
     result
