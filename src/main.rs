@@ -71,7 +71,7 @@ fn main() {
     assert_eq!(result, String::from("1[.]1[.]1[.]1"));
 
     let result = q771::num_jewels_in_stones("aA", "aAAbbbb");
-    assert_eq!(result, 3);
+    assert_eq!(result, Ok(3));
 
     let result = q2114::most_words_found(vec![
         "alice and bob love leetcode",
