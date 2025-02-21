@@ -3,5 +3,5 @@ pub fn most_words_found(sentences: &[&str]) -> usize {
         .iter()
         .map(|x| x.split(' ').count())
         .max()
-        .unwrap_or(0)
+        .unwrap_or_default()
 }
