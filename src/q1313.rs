@@ -1,16 +1,11 @@
-pub fn decompress_rl_elist(nums: &[i32]) -> Vec<i32> {
-    let mut result = Vec::new();
+use std::iter::repeat;
 
-    for i in (0..nums.len()).step_by(2) {
-        let freq = nums[i];
-        let val = nums[i + 1];
-
-        let mut f = 0;
-        while f < freq {
-            result.push(val);
-            f += 1;
-        }
-    }
-
-    result
+pub fn decompress_rl_elist(nums: &[usize]) -> Vec<usize> {
+    nums.chunks(2)
+        .filter_map(|chunk| match chunk {
+            [freq, val] => Some((freq, val)),
+            _ => None,
+        })
+        .flat_map(|(&freq, &val)| repeat(val).take(freq))
+        .collect()
 }
