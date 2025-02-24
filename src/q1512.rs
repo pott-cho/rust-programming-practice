@@ -1,15 +1,17 @@
+use std::collections::HashMap;
+
 pub fn num_identical_pairs(nums: &[i32]) -> i32 {
-    let size = nums.len();
     let mut result = 0;
+    let mut map: HashMap<i32, i32> = HashMap::new();
 
-    // n제한이 100이기 때문에 간단하게 O(n^2) 으로 풀 수 있다.
-    for i in 0..size {
-        for j in i + 1..size {
-            if nums[i] == nums[j] {
-                result += 1;
-            }
-        }
+    // 현재 값을 해시맵에서 찾는다. 있으면 +1, 없으면 entry 1 등록
+    for &n in nums {
+        map.entry(n)
+            .and_modify(|e| {
+                *e += 1;
+                result += *e;
+            })
+            .or_insert(0);
     }
-
     result
 }
