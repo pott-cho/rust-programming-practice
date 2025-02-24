@@ -1,6 +1,6 @@
-pub fn sort_sentence(s: &str) -> String {
+pub fn sort_sentence(s: &str) -> Result<String, String> {
     if s.len() < 2 {
-        return s.to_string();
+        return Err(String::from("문자열의 길이가 최소단위 이하입니다."));
     }
 
     // 1. 문장을 단어로 분리한다.
@@ -14,8 +14,9 @@ pub fn sort_sentence(s: &str) -> String {
     arr.sort_unstable_by_key(|&(_, index)| index);
 
     // 3. 배열을 풀어서 String 으로 만들어 반환한다.
-    arr.iter()
+    Ok(arr
+        .iter()
         .map(|(word, _)| *word)
         .collect::<Vec<&str>>()
-        .join(" ")
+        .join(" "))
 }
