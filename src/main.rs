@@ -109,9 +109,12 @@ fn main() {
     );
     assert_eq!(result, "this is a secret");
 
-    let linked_list = q1290::Node::make_singly_linked_list(&[1, 0, 1]);
-    let result = q1290::get_decimal_value(linked_list);
+    let result = q1290::get_decimal_value(&[1, 0, 1]);
     assert_eq!(result, 5);
+    let result = q1290::get_decimal_value(&[0]);
+    assert_eq!(result, 0);
+    let result = q1290::get_decimal_value(&[1, 1, 0, 1]);
+    assert_eq!(result, 13);
 
     let result = q2011::final_value_after_operations(vec!["--X", "X++", "X++"]);
     assert_eq!(result, 1);
