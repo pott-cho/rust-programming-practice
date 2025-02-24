@@ -11,7 +11,7 @@ pub fn sort_sentence(s: &str) -> String {
         .collect();
 
     // 2. 각 단어의 마지막 글자를 인덱스로 활용하여 단어를 정렬한다.
-    arr.sort_by_key(|&(_, index)| index);
+    arr.sort_unstable_by_key(|&(_, index)| index);
 
     // 3. 배열을 풀어서 String 으로 만들어 반환한다.
     arr.iter()
