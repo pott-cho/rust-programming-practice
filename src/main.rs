@@ -116,7 +116,7 @@ fn main() {
     let result = q1290::get_decimal_value(&[1, 1, 0, 1]);
     assert_eq!(result, 13);
 
-    let result = q2011::final_value_after_operations(vec!["--X", "X++", "X++"]);
+    let result = q2011::final_value_after_operations(&["--X", "X++", "X++"]);
     assert_eq!(result, 1);
 
     let result = q1342::number_of_steps(14);
