@@ -1,17 +1,19 @@
-pub fn count_matches(items: &[Vec<&str>], rule_key: &str, rule_value: &str) -> i32 {
-    let mut result = 0;
-    for item in items {
-        let t = item[0];
-        let color = item[1];
-        let name = item[2];
+use std::collections::HashMap;
 
-        if (rule_key == "type" && rule_value == t)
-            || (rule_key == "color" && rule_value == color)
-            || (rule_key == "name" && rule_value == name)
-        {
-            result += 1;
-        }
-    }
+pub fn count_matches(items: &[Vec<&str>], rule_key: &str, rule_value: &str) -> Result<i32, String> {
+    let map: HashMap<&str, usize> = HashMap::from([("type", 0), ("color", 1), ("value", 2)]);
+
+    let target_index = match map.get(rule_key) {
+        Some(key) => *key,
+        None => return Err(String::from("Please check rule_key.")),
+    };
+
+    let result = items
+        .iter()
+        .filter(|x| x.get(target_index) == Some(&rule_value))
+        .count();
 
     result
+        .try_into()
+        .map_err(|_| String::from("items size exceeds i32 range."))
 }
