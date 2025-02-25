@@ -140,6 +140,6 @@ fn main() {
     let result = q1688::number_of_matches(7);
     assert_eq!(result, 6);
 
-    let result = q2037::min_moves_to_seat(&[3, 1, 5], &[2, 7, 4]);
+    let result = q2037::min_moves_to_seat(&mut [3, 1, 5], &mut [2, 7, 4]);
     assert_eq!(result, 4);
 }
