@@ -25,6 +25,7 @@ mod q2235;
 mod q2325;
 mod q771;
 
+#[allow(clippy::too_many_lines)]
 fn main() {
     let result = q2235::sum(12, 5);
     assert_eq!(result, 17);
@@ -81,7 +82,17 @@ fn main() {
     assert_eq!(result, 6);
 
     let result = q1859::sort_sentence("is2 sentence4 This1 a3");
-    assert_eq!(result, String::from("This is a sentence"));
+    assert_eq!(result, Ok(String::from("This is a sentence")));
+    let result = q1859::sort_sentence("i");
+    assert_eq!(
+        result,
+        Err(String::from("문자열의 길이가 최소단위 이하입니다."))
+    );
+    let result = q1859::sort_sentence("");
+    assert_eq!(
+        result,
+        Err(String::from("문자열의 길이가 최소단위 이하입니다."))
+    );
 
     let result = q1773::count_matches(
         &[
