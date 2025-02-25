@@ -1,28 +1,25 @@
+use std::collections::{hash_map::Entry, HashMap};
+
 pub fn decode_message(key: &str, message: &str) -> String {
-    let mut code = [' '; 26];
     let first = b'a';
     let mut alpha = 0;
+    let mut code: HashMap<char, char> = HashMap::new();
+
+    // 1. 키 매핑 테이블 생성
     for c in key.chars() {
         if c == ' ' {
             continue;
         }
 
-        let idx = (c as u8 - (b'a')) as usize;
-        if code[idx] == ' ' {
-            code[idx] = (alpha + first) as char;
+        if let Entry::Vacant(e) = code.entry(c) {
+            e.insert((first + alpha) as char);
             alpha += 1;
         }
     }
 
-    let mut result = String::new();
-    for m in message.chars() {
-        if m == ' ' {
-            result.push(' ');
-        } else {
-            let idx: usize = (m as u8 - first) as usize;
-            result.push(code[idx]);
-        }
-    }
-
-    result
+    // 2. 메시지 디코딩
+    message
+        .chars()
+        .map(|c| *code.get(&c).unwrap_or(&c))
+        .collect()
 }
